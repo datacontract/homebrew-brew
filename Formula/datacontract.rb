@@ -1,4 +1,4 @@
-class DatacontractCli < Formula
+class Datacontract < Formula
   desc "manage your datacontract.yaml files "
   homepage "https://cli.datacontract.com/"
   version "v0.1.1"
