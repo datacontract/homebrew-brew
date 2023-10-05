@@ -1,7 +1,7 @@
 class Datacontract < Formula
   desc "Manage your datacontract.yaml files"
   homepage "https://cli.datacontract.com/"
-  url "https://github.com/datacontract/cli.git", tag: "v0.3.0", revision: "bd1fb01d236cd82fd48aae4a993464b259604225"
+  url "https://github.com/datacontract/cli.git", tag: "v0.3.1", revision: "d193ac65aa8b93eb22e572e8453138926295bbc3"
   license "MIT"
 
   depends_on "go" => :build
@@ -11,6 +11,6 @@ class Datacontract < Formula
   end
 
   test do
-    assert_match "datacontract version v0.3.0", shell_output("#{bin}/datacontract -v")
+    assert_match "datacontract version v0.3.1", shell_output("#{bin}/datacontract -v")
   end
 end
