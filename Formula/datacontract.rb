@@ -1,7 +1,7 @@
 class Datacontract < Formula
   desc "Manage your datacontract.yaml files"
   homepage "https://cli.datacontract.com/"
-  url "https://github.com/datacontract/cli.git", tag: "v0.4.0", revision: "cea08af1d5120bf401d862b1584a5eb674bbcfca"
+  url "https://github.com/datacontract/cli.git", tag: "v0.5.0", revision: "35bb4228540b65798acd3eefc4c5a7207905e6f7"
   license "MIT"
 
   depends_on "go" => :build
