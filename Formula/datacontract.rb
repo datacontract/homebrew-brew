@@ -1,16 +1,19 @@
 class Datacontract < Formula
-  desc "Manage your datacontract.yaml files"
+  include Language::Python::Virtualenv
+  desc "The datacontract CLI is an open source command-line tool for working with Data Contracts. It uses data contract YAML files to lint the data contract, connect to data sources and execute schema and quality tests, detect breaking changes, and export to different formats. The tool is written in Python."
   homepage "https://cli.datacontract.com/"
-  url "https://github.com/datacontract/cli.git", tag: "v0.6.0", revision: "423dd41f66299a3406f88a9703c708fac5c38a8e"
+  url "https://github.com/datacontract/cli/releases/download/v0.9.2/datacontract-cli-0.9.2.tar.gz"
+  sha256 "5e527225fa10c32d23403000435564f5a16705fe657c40231cb68f29c9d698f3"
   license "MIT"
 
-  depends_on "go" => :build
+  depends_on "python@3.11"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "-o", bin/"datacontract", "cmd/datacontract.go"
+    venv = virtualenv_create(libexec, "python3")
+    venv.pip_install_and_link buildpath
   end
 
   test do
-    assert_match "datacontract version v0.3.2", shell_output("#{bin}/datacontract -v")
+    system "#{bin}/datacontract", "--version"
   end
 end
