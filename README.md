@@ -18,5 +18,5 @@ poet datacontract-cli
 
 Install locally
 ```
-
+brew install --build-from-source ./Formula/datacontract.rb
 ```
