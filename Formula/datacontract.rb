@@ -9,8 +9,10 @@ class Datacontract < Formula
   depends_on "python@3.11"
 
   def install
-    virtualenv_create(libexec, "python3")
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3", without_pip: false)
+    venv.pip_install "setuptools"
+    venv.pip_install "wheel"
+    venv.pip_install_and_link buildpath
   end
 
   test do
