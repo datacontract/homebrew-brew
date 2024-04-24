@@ -1,22 +1,3 @@
 # Data Contract CLI Homebrew Formula
 
-```shell
-brew install datacontract/brew/datacontract
-```
-
-## Development
-
-```bash
-cd /tmp
-mkdir fresh
-cd fresh
-python3 -m venv venv
-source venv/bin/activate
-pip install homebrew-pypi-poet datacontract-cli
-poet datacontract-cli
-```
-
-Install locally
-```
-brew install --build-from-source ./Formula/datacontract.rb
-```
+> This repository is no longer maintained, use a different installation method for data contract CLI: https://github.com/datacontract/datacontract-cli?tab=readme-ov-file#installation
